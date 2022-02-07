@@ -89,10 +89,12 @@ head(df3)
     ## 6 BRS MG 753C RB               62.0      31.5
 
 ## Plot
-
+Use a bar graph to visualize the height differences comparing the genotype’s different treatments
 ``` r
 p <- ggplot(data=df3, aes(x=Genotype, y=mean.Height, fill=Treatment)) +
   geom_bar(stat="identity", position="dodge") +
   theme_bw(base_size = 6)
 p
 ```
+<img width="677" alt="Screen Shot 2022-02-07 at 8 00 35 AM" src="https://user-images.githubusercontent.com/98765581/152792831-52fb5761-0681-4edd-8d13-a323b4bb59d2.png">
+
