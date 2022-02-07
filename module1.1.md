@@ -90,9 +90,9 @@ head(df3)
 
 ## Plot
 
-Use a bar graph to visualize the height differences comparing the
-genotype’s different treatments
-![](module1.1_files/figure-gfm/pressure-1.png)<!-- -->
-
-Note that the `echo = FALSE` parameter was added to the code chunk to
-prevent printing of the R code that generated the plot.
+``` r
+p <- ggplot(data=df3, aes(x=Genotype, y=mean.Height, fill=Treatment)) +
+  geom_bar(stat="identity", position="dodge") +
+  theme_bw(base_size = 6)
+p
+```
