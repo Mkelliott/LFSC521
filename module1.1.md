@@ -99,4 +99,4 @@ p
 <img width="677" alt="Screen Shot 2022-02-07 at 8 00 35 AM" src="https://user-images.githubusercontent.com/98765581/152792831-52fb5761-0681-4edd-8d13-a323b4bb59d2.png">
 
 ## Analysis
-In most Genotypes, you can tell from the graph that the Red-Blue light treatment significantly decreased the height of the plant in almost all genotypes.
+In almost all genotypes, the graph shows  that the Red-Blue light treatment significantly decreased the height of the plant.
