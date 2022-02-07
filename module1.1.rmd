@@ -1,0 +1,51 @@
+---
+title: "module1.1"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+##Importing tidyverse
+```{r}
+library(tidyverse)
+```
+
+##Importing data
+```{r}
+df <- read.csv("~/Desktop/Soybeanandlightdata.csv")
+glimpse(df)
+```
+
+## Grouping 
+Group so that you can see the mean and standard deviation of height by genotype
+```{r}
+df$Height <- as.numeric(df$Height)
+df2<-df%>%
+  group_by(Genotype) %>%
+  summarise(mean.Height = mean(Height, na.rm = TRUE),
+            sd.Height = sd(Height, na.rm = TRUE))
+glimpse(df2)
+```
+
+##Split-Apply-Combine
+We want to see how genotype and treatment combined yield height
+```{r}
+df3 <-df %>% 
+  group_by(Genotype, Treatment) %>%
+  summarise(mean.Height = mean(Height, na.rm = TRUE),
+            sd.Height = sd(Height, na.rm = TRUE), .groups = "drop")
+head(df3)
+```
+
+## Plot
+Use a bar graph to visualize the height differences comparing the genotype's different treatments
+```{r pressure, echo=FALSE}
+p <- ggplot(data=df3, aes(x=Genotype, y=mean.Height, fill=Treatment)) +
+  geom_bar(stat="identity", position="dodge") +
+  theme_bw(base_size = 6)
+p
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
