@@ -47,5 +47,7 @@ p <- ggplot(data=df3, aes(x=Genotype, y=mean.Height, fill=Treatment)) +
   theme_bw(base_size = 6)
 p
 ```
+## Analysis
+In most Genotypes, you can tell from the graph that the Red-Blue light treatment significantly decreased the height of the plant in almost all genotypes.
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
